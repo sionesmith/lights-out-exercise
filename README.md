@@ -13,53 +13,66 @@ Here's a sketch of what you'll build:
 
 ---
 
-## Step 1: Fork the Starter Repository
+## Step 1: Fork the starter repository
 
 **Brief:**  
-Fork the provided GitHub repository to your account to begin the project. Update the `README.md` to include the title of your product showcase app.
+Fork this repository to your account to begin the project. Check that the project can run (`npm install`, `npm run start`).
 
 **Acceptance Criteria:**
 - ✅ The repository is forked to your GitHub account.
 - ✅ You have cloned the forked repository to your local machine.
-- ✅ You have replaced the `README.md` with your own app’s title (e.g., `# My Game App`).
+- ✅ You have ran the project and it displays an empty page.
 
 ---
 
-## Step 2: Set Up the Project Structure
-
-**Brief:**  
-Create the basic file structure for your project.
-
-**Acceptance Criteria:**
-- ✅ Your repository contains `App.js`, `index.js`, `Header.js`, `ProductList.js`, `ProductCard.js`, `ProductDetail.js`, and `styles.css` files in the appropriate folders.
-- ✅ All components are correctly imported and rendered in the `App.js` file.
-- ✅ `index.js` renders the `App` component to the DOM.
-
----
-
-## Step 3: Create the Header Component
+## Step 2: Create the Header component
 
 **Brief:**  
 Build a `Header` component that displays the app's title.
 
 **Acceptance Criteria:**
-- ✅ `Header.js` contains a functional component that renders an `<h1>` with the title "Product Showcase".
-- ✅ The header component is centered at the top of the page.
+- ✅ Your repository contains `Header.js` file in the appropriate folder.
+- ✅ `Header.js` contains a functional component that renders an `<h1>` with the title "Lights Out".
+- ✅ The header component is at the top of the page.
 
 ---
 
-## Step 4: Create the ProductList Component
+## Step 3: Create the Cell component
 
 **Brief:**  
-Set up a `ProductList` component that will hold individual product cards.
+Build a `Cell` component representing a single light. The component should be a clickable button. Add css to make the button look like a light.
+
+Below is a sample style to get you started:
+```
+width: 25px;
+height: 25px;
+border-radius: 50%;
+border: none;
+margin: 20px;
+background-color: rgb(28, 195, 72);
+```
 
 **Acceptance Criteria:**
-- ✅ `ProductList.js` contains a functional component that imports `ProductCard`.
-- ✅ `ProductList` renders an array of products by mapping each product to a `ProductCard`.
+- ✅ Your repository contains `Cell.js` and `Cell.css` files in the appropriate folder.
+- ✅ `Cell` accepts `cellIndex`, `isOn`, and `toggleLight` as props.
+- ✅ `Cell.css` contains a style representing an "on" light and an "off" light.
+- ✅ `Cell` renders a button with the appropriate style depending on the prop `isOn`.
 
 ---
 
-## Step 5: Create Static Product Data
+## Step 4: Create the Board component
+
+**Brief:**  
+Build a `Board` component which represents the 5x5 grid where the `Cell`s will be placed. 
+
+**Acceptance Criteria:**
+- ✅ `Board` contains a functional component that imports `Cell`.
+- ✅ `Board` contains a 5x5 2d array of `bool` which represents the state of each light.
+- ✅ `Board` renders a 5x5 grid of cells.
+
+---
+
+## Step 5: Create a static board of lights for testing 
 
 **Brief:**  
 Add static product data to `ProductList` to simulate a product catalog.
