@@ -1,18 +1,15 @@
 
-# Project: Build a Product List and Detail View App with React
+# Project: Build a Lights Out game with React
 
-In this project, you'll create a simple product list app using React. You’ll practice structuring a web project, passing data through props, conditional rendering, and designing reusable components.
-
-This project is designed to be completed within one day.
+In this project, you'll create the "Lights Out" game using React.
 
 For every step:
 - Read the brief and acceptance criteria. If unsure, seek help immediately.
 - When you’ve fulfilled the acceptance criteria, make a commit and push it to GitHub.
-- Move your project card on the associated GitHub project board after completing each step.
 
 Here's a sketch of what you'll build:
 
-![interface](./project-product-showcase-interface.svg)
+![interface](./sketch.svg)
 
 ---
 
@@ -24,7 +21,7 @@ Fork the provided GitHub repository to your account to begin the project. Update
 **Acceptance Criteria:**
 - ✅ The repository is forked to your GitHub account.
 - ✅ You have cloned the forked repository to your local machine.
-- ✅ You have replaced the `README.md` with your own app’s title (e.g., `# My Product Showcase App`).
+- ✅ You have replaced the `README.md` with your own app’s title (e.g., `# My Game App`).
 
 ---
 
