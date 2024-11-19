@@ -9,7 +9,7 @@ For every step:
 
 Here's a sketch of what you'll build:
 
-![interface](./sketch.svg)
+![interface](./sketch.jpg)
 
 ---
 
@@ -40,7 +40,7 @@ Build a `Header` component that displays the app's title.
 ## Step 3: Create the Cell component
 
 **Brief:**  
-Build a `Cell` component representing a single light. The component should be a clickable button. Add css to make the button look like a light.
+Build a `Cell` component representing a single light. The component should be a clickable button. Add css to make the button look like a light. Display two `Cell` components in your app; one of each type.
 
 Below is a sample style to get you started:
 ```
@@ -57,77 +57,74 @@ background-color: rgb(28, 195, 72);
 - ✅ `Cell` accepts `cellIndex`, `isOn`, and `toggleLight` as props.
 - ✅ `Cell.css` contains a style representing an "on" light and an "off" light.
 - ✅ `Cell` renders a button with the appropriate style depending on the prop `isOn`.
+- ✅ The app renders an "on" `Cell` and an "off" `Cell`.
 
 ---
 
 ## Step 4: Create the Board component
 
 **Brief:**  
-Build a `Board` component which represents the 5x5 grid where the `Cell`s will be placed. 
+Build a `Board` component which represents the 5x5 grid where the `Cell`s will be placed. The grid should be a 2d 5x5 array of bools which is stored in the component's state. 
 
 **Acceptance Criteria:**
 - ✅ `Board` contains a functional component that imports `Cell`.
 - ✅ `Board` contains a 5x5 2d array of `bool` which represents the state of each light.
-- ✅ `Board` renders a 5x5 grid of cells.
+- ✅ `Board` should pass the index of the array and the light state into `Cell`s props.
+- ✅ The app renders the `Board`.
+- ✅ `Board` renders a 5x5 grid of cells based on the 2d array.
 
 ---
 
-## Step 5: Create a static board of lights for testing 
+## Step 5: Create a static board of lights for testing the game
 
 **Brief:**  
-Add static product data to `ProductList` to simulate a product catalog.
+Instead of an empty 2d array, programatically set some of the values in the array to `true` so that the `Cell`s light up. The `Cell`s should light up depending on which values in the array are `true`.
 
 **Acceptance Criteria:**
-- ✅ The static product data includes properties: `id`, `name`, `price`, `description`, and `imageURL`.
-- ✅ This data is passed as props to `ProductCard` components within `ProductList`.
-- ✅ Each product renders as a `ProductCard` on the page.
+- ✅ The board state is not empty (i.e. not all `false`)
+- ✅ The correct `Cell`s are lit up.
 
 ---
 
-## Step 6: Create the ProductCard Component
+## Step 6: Make the lights toggle when clicked
 
 **Brief:**  
-Design the `ProductCard` component to display individual product information.
+When a light is clicked, the clicked light should toggle between on and off, and the board state should update accordingly. 
 
 **Acceptance Criteria:**
-- ✅ `ProductCard` accepts props for `name`, `price`, and `image`.
-- ✅ The product name, price, and image are displayed within a styled card layout.
-- ✅ Each `ProductCard` is clickable to select the product for viewing in `ProductDetail`.
+- ✅ `Cell` contains an `onclick` handler which executes the `toggleLight` function from the props. `toggleLight` should pass its own index (`cellIndex`) as a parameter.
+- ✅ `Board` contains a function which updates the board state based on the selected light. This function should be passed into `Cell`s props.
+- ✅ When a light is clicked, it should toggle to the opposite state.
 
 ---
 
-## Step 7: Create the ProductDetail Component
+## Step 7: Make the adjacent lights toggle
 
 **Brief:**  
-Build a `ProductDetail` component that displays detailed information for a selected product.
+When a light is clicked, the clicked light and its neighbours (not counting diagonal ones) should toggle.
 
 **Acceptance Criteria:**
-- ✅ `ProductDetail` accepts `name`, `price`, `description`, and `image` as props and displays them.
-- ✅ The product details are shown in a styled layout that distinguishes it from the `ProductList`.
+- ✅ When a light is clicked, it's neightbours (up, down, left, right) and itself should toggle to the opposite state.
 
 ---
 
-## Step 8: Implement Product Selection
+## Step 8: Check if the player has won
 
 **Brief:**  
-Add functionality to select a product and display its details.
+When all the lights are off, the app should show that the player has won.
 
 **Acceptance Criteria:**
-- ✅ Clicking on a `ProductCard` sets that product as the selected product.
-- ✅ The selected product is passed to `ProductDetail` for display.
-- ✅ Only one product’s details are shown at a time.
+- ✅ When all the lights are off, the app should show that the player has won.
 
 ---
 
-## Step 9: Conditional Rendering of ProductDetail
+## Step 9: Generate a random board of lights
 
 **Brief:**  
-Ensure that `ProductDetail` only appears when a product is selected.
+Instead of a hardcoded board state, randomise the board state when starting the app. You can import `BoardGenerator.js` and use `newBoard()` to get a random 5x5 2d array of bools.
 
 **Acceptance Criteria:**
-- ✅ `ProductDetail` is hidden when no product is selected.
-- ✅ Clicking a product in `ProductList` updates the displayed details in `ProductDetail`.
-- ✅ If a new product is selected, the displayed details update accordingly.
+- ✅ The lights are randomly lit on each new game.
 
 ---
 
@@ -135,11 +132,6 @@ Ensure that `ProductDetail` only appears when a product is selected.
 
 **Brief:**  
 Add styles to enhance the layout and make the app visually appealing.
-
-**Acceptance Criteria:**
-- ✅ The `Header` is styled and centered.
-- ✅ `ProductCard` components have a border, padding, and are arranged in a grid or flex layout.
-- ✅ `ProductDetail` has distinct styling to differentiate it from `ProductList`.
 
 ---
 
