@@ -146,3 +146,14 @@ Review the app to ensure it meets all acceptance criteria, refactor code for rea
 - ✅ All components function as expected without errors.
 
 --- 
+
+### Resources
+
+Working demo:
+
+https://limeyuzu.github.io/lightsout/
+
+
+A solver for Lights Out:
+
+https://www.jaapsch.net/puzzles/javascript/lightjcl.htm
