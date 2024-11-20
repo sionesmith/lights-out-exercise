@@ -6,6 +6,6 @@ const Header = () => {
         <h1>Lights Out</h1>
     </header>
   );
-};
+}
 
 export default Header;
