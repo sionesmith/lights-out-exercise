@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import './Cell.css';
-import Cell from './Cell';
+import Cell from './components/Cell';
+import board from './Board';
 
 
 const App = () => {

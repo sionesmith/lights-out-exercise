@@ -1,4 +1,4 @@
-import React, { useState } from 'rreact'; 
+import React, { useState } from 'react'; 
 import Cell from '/Cell';
 import './Board.css';
 
