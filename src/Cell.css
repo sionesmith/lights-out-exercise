@@ -1,16 +1,17 @@
-.green {
+.cell {
     width: 25px;
-height: 25px;
-border-radius: 50%;
-border: solid black;
-margin: 20px;
-background-color: rgb(28, 195, 72);
-}
-.green1 {
-    width: 25px;
-height: 25px;
-border-radius: 50%;
-border: solid black;
-margin: 20px;
-background-color: #efefef;
-}
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cell.on {
+    background-color: rgb(28, 195, 72); /* Green light */
+  }
+  
+  .cell.off {
+    background-color: rgb(150, 150, 150); /* Grey light */
+  }

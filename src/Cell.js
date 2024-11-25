@@ -1,15 +1,14 @@
-import React from 'react'
-import "./Cell.css" 
+import React from 'react';
+import './Cell.css';
 
-
-function Cell(cellIndex, isOn ,toggleLight) {
-  return (
-        <>
-        <button className="green" onClick=""/>
-
-        <button className="green1" onClick=""/>
-        </>
+const Cell = ({cellIndex, isOn, toggleLight }) => {
+    return(
+     <button
+        // className = {`cell ${isOn ? 'greenOn' : 'greenOff'}`}
+        className={`cell ${isOn ? ' On' : 'off'}`}
+        onClick={() => toggleLight(cellIndex)}
+     ></button>
   );
-}
+};
 
-export default Cell
+export default Cell;

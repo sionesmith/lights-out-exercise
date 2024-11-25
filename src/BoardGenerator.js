@@ -2,6 +2,7 @@
  * Generates a random 5x5 solvable board
  * @returns 5x5 array of bools
  */
+
 export function newBoard() {
     let board = randomBoard();
 

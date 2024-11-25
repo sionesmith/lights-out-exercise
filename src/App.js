@@ -1,14 +1,35 @@
 import React from 'react';
-import Header from './Header';
-import Cell from './Cell'
+import { useState } from 'react';
+import './Cell.css';
+import Cell from './Cell';
 
-function App () {
+
+const App = () => {
+  const [lights, setLights] = useState([
+    { id: 0, isOn: true },
+    { id: 1, isOn: false },
+  ]);
+
+  const toggleLight = (cellIndex) => {
+    setLights((prevLights) => 
+      prevLights.map((light, index) => 
+        index === cellIndex ? { ...light, isOn: !light.isOn } : light
+     )
+    );
+  }
+
   return (
-    <div className="App">
-      <Header/>
-      <Cell/>
+    <div style={{ display: 'flex'}}>
+      {lights.map((light) => (
+        <Cell
+        key={light.id}
+        cellIndex={light.id}
+        isOn={light.isOn}
+        toggleLight={toggleLight}
+        />     
+       ))}
     </div>
-  );
-}
-
-export default App;
+   );
+};
+    
+export default App
