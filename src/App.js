@@ -1,9 +1,8 @@
 import React from 'react';
+import Header from './Header';
 import { useState } from 'react';
 import './Cell.css';
 import Cell from './components/Cell';
-import board from './Board';
-
 
 const App = () => {
   const [lights, setLights] = useState([

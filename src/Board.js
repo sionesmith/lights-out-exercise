@@ -1,5 +1,5 @@
 import React, { useState } from 'react'; 
-import Cell from '/Cell';
+import  '/Cell';
 import './Board.css';
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cell.css';
+import "./Cell.css"
 
 const Cell = ({cellIndex, isOn, toggleLight }) => {
     return(
